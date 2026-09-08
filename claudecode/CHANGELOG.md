@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.65-poppler1] - 2026-09-08
+
+### Fixed
+- Claude Code's `Read` tool cannot render PDF pages: `pdftoppm` (from `poppler-utils`) is not installed in the image, so any PDF read fails with "pdftoppm is not installed". The package cannot be installed at runtime either — `apk` returns `Permission denied` on exec even as root. Added `poppler-utils` to the build-time `apk add` list (see robsonfelix/robsonfelix-hass-addons#45)
+
 ## [1.2.65] - 2026-07-08
 
 ### Security
